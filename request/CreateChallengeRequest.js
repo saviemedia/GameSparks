@@ -9,5 +9,5 @@
 
 var maxPlayers = Spark.getData().maxPlayers;
  
-//set it to scriptData
+//set it to scriptData.
 Spark.setScriptData("maxPlayers", maxPlayers);
