@@ -7,11 +7,8 @@
 // ====================================================================================================
 
 var idChallenge = Spark.getData().idChallenge;
-
 var myChallenge = Spark.getChallenge(idChallenge);
-
 var challengerID = myChallenge.getChallengerId();
-
 
 var documentChallengerToFind =  {"idPlayer" : challengerID};
 var myConnectedPlayers = Spark.runtimeCollection("PlayerConnected").find(documentChallengerToFind);
@@ -21,6 +18,8 @@ if(myConnectedPlayers.hasNext())
 {
     myConnectedPlayers.next();
     myChallenger = myConnectedPlayers.curr();
+	var myChallengerInfos = Spark.loadPlayer(myChallenger["idPlayer"]);
+	myChallenger["SAVIE"] = myChallengerInfos.getScriptData("SAVIE");
 }
 
 var myIdGame = myChallenge.getScriptData("jeu");
