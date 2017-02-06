@@ -23,8 +23,7 @@ if(myConnectedPlayers.hasNext())
     myChallenger = myConnectedPlayers.curr();
 }
 
-var theGame = myChallenge.getScriptData("jeu");
-var myIdGame = theGame["idJeu"];
+var myIdGame = myChallenge.getScriptData("jeu");
 /*var projectionNotoHave = {Questions : 0, Illustration : 0, Rules : 0, NoTournoi : 0, Tutoriel : 0, Langue : 0};
 var documentToFind =  {"_id" : {"$oid" : myIdGame}}
 var result = Spark.metaCollection("Jeu").find(documentToFind, projectionNotoHave);
