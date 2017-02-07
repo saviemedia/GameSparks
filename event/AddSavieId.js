@@ -9,4 +9,4 @@
 var savieID = Spark.getData().savieID;
 var self = Spark.getPlayer();
 
-self.setScriptData("SAVIE", savieID);
+self.setScriptData("savieID", savieID);
