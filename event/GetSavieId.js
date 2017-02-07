@@ -8,6 +8,6 @@
 var idPlayer = Spark.getData().idPlayer;
 var myPlayer = Spark.loadPlayer(idPlayer);
 
-var savieID = myPlayer.getScriptData("SavieID");
+var savieID = myPlayer.getScriptData("savieID");
 
-Spark.setScriptData("SavieID", savieID);
+Spark.setScriptData("savieID", savieID);
