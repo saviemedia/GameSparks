@@ -19,7 +19,7 @@ if(myConnectedPlayers.hasNext())
     myConnectedPlayers.next();
     myChallenger = myConnectedPlayers.curr();
 	var myChallengerInfos = Spark.loadPlayer(myChallenger["idPlayer"]);
-	myChallenger["SAVIE"] = myChallengerInfos.getScriptData("SAVIE");
+	myChallenger["savieID"] = myChallengerInfos.getScriptData("savieID");
 }
 
 var myIdGame = myChallenge.getScriptData("jeu");
