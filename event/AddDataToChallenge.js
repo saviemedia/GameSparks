@@ -62,13 +62,9 @@ newChallenge["challengeID"] = myChallenge.getId();
 newChallenge["challengerID"] = myChallenge.getChallengerId();
 var username = Spark.getPlayer().getDisplayName()
 newChallenge["challengerName"] = username;
-var infos =  myChallenge.getScriptData("jeu");
-var infosGame = {};
-var theInfosGame = myChallenge.getScriptData("jeu")
-infosGame["idJeu"] =  theInfosGame["idJeu"];
-infosGame["nomMatiere"] = theInfosGame["nomMatiere"];
-newChallenge["infosGame"] = infosGame;
+newChallenge["idJeu"] = myChallenge.getScriptData("jeu");
 newChallenge["maxPlayers"] = myChallenge.getScriptData("maxPlayers");
+newChallenge["challengerSavieID"] = myChallenge.getScriptData("challengerSavieID");
 
 documentToSend = {"theChallenge" : newChallenge};
 
