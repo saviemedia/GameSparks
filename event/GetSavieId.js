@@ -5,8 +5,9 @@
 // For details of the GameSparks Cloud Code API see https://portal.gamesparks.net/docs.htm			
 //
 // ====================================================================================================
-var self = Spark.getPlayer();
+var idPlayer = Spark.getData().idPlayer;
+var myPlayer = Spark.loadPlayer(idPlayer);
 
-var savieID = self.getScriptData("SAVIE");
+var savieID = myPlayer.getScriptData("SAVIE");
 
 Spark.setScriptData("SAVIE", savieID);
