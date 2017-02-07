@@ -8,6 +8,7 @@
 
 // Add some infos for the challenge, the game infos
 var idJeu = Spark.getData().idJeu;
+var challengerSavieID = Spark.getData().challengerSavieID;
 var idChallenge = Spark.getData().idChallenge;
 var myChallenge = Spark.getChallenge(idChallenge);
 
@@ -28,6 +29,7 @@ if( result.hasNext())
 
 documentToAdd["nomMatiere"] = matter;*/
 myChallenge.setScriptData("jeu", idJeu);
+myChallenge.setScriptData("challengerSavieID", challengerSavieID);
 
 // SEND MESSAGE TO ALL PLAYERS
 var me = Spark.getPlayer();
