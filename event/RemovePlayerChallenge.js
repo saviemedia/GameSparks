@@ -16,7 +16,7 @@ var arr_playerNotified = new Array();
 
 var myChallengerId = myChallenge.getChallengerId();
 var arr_playerNotified = new Array();
-arr_playerNotified.Add(myChallengerId);
+arr_playerNotified.push(myChallengerId);
 
 Spark.setScriptData("arr_playerNotified", arr_playerNotified);
 
