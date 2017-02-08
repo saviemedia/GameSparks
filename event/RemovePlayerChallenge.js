@@ -9,7 +9,20 @@
 var myIdChallenge = Spark.getData().idChallenge;
 var myIdPlayer = Spark.getData().idPlayer;
 
-Spark.getChallenge(myIdChallenge).removePlayer(myIdPlayer);
+var myChallenge = Spark.getChallenge(myIdChallenge);
+myChallenge.removePlayer(myIdPlayer);
 
+var arr_playerNotified = new Array();
 
-Spark.setScriptData("myIdPlayer", myIdPlayer);
+var myChallengerId = myChallenge.getChallengerId();
+var arr_playerNotified = myChallenge.getChallengedPlayerIds();
+challengePlayerIds.Add(myChallengerId);
+
+Spark.setScriptData("arr_playerNotified", arr_playerNotified);
+
+var documentToSend = {"idPlayer" : myIdPlayer};
+var nsg = Spark.message("CHALLENGE_PARTICIPANT_LEFT");
+nsg.setMessageData(documentToSend);
+nsg.setPlayerIds(arr_playerNotified);
+nsg.send();
+
