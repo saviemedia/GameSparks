@@ -22,6 +22,6 @@ if(myConnectedPlayers.hasNext())
 	myChallenger["savieID"] = myChallengerInfos.getScriptData("savieID");
 }
 
-Spark.setScriptData("idJeu", myChallenge.getScriptData("jeu"));
+Spark.setScriptData("idJeu", myChallenge.getScriptData("idJeu"));
 Spark.setScriptData("maxPlayers", myChallenge.getScriptData("maxPlayers"));
 Spark.setScriptData("challenger", myChallenger);
