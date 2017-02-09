@@ -13,22 +13,6 @@ var challengerSavieID = Spark.getData().challengerSavieID;
 var idChallenge = Spark.getData().idChallenge;
 var myChallenge = Spark.getChallenge(idChallenge);
 
-/*
-var documentToAdd = {};
-documentToAdd["idJeu"] = idJeu;
-
-var result = Spark.metaCollection("Jeu").find({"_id" : {"$oid" : idJeu}});
-
-var matter;
-var obj;
-if( result.hasNext()) 
-{
-    result.next(); 
-    obj = result.curr()
-    matter = obj["Matiere"]["NomMatiere"];
-}
-
-documentToAdd["nomMatiere"] = matter;*/
 myChallenge.setScriptData("idJeu", idJeu);
 myChallenge.setScriptData("matterJeu", matterJeu);
 myChallenge.setScriptData("challengerSavieID", challengerSavieID);
@@ -62,8 +46,7 @@ var newChallenge = {};
 
 newChallenge["challengeID"] = myChallenge.getId();
 newChallenge["challengerID"] = myChallenge.getChallengerId();
-var username = Spark.getPlayer().getDisplayName()
-newChallenge["challengerName"] = username;
+newChallenge["challengerName"] = Spark.getPlayer().getDisplayName()
 newChallenge["idJeu"] = myChallenge.getScriptData("idJeu");
 newChallenge["matterJeu"] = myChallenge.getScriptData("matterJeu");
 newChallenge["maxPlayers"] = myChallenge.getScriptData("maxPlayers");
