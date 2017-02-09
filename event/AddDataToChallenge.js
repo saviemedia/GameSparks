@@ -10,12 +10,14 @@
 var idJeu = Spark.getData().idJeu;
 var matterJeu = Spark.getData().matterJeu;
 var challengerSavieID = Spark.getData().challengerSavieID;
+var challengeSeed = Spark.getData().challengeSeed;
 var idChallenge = Spark.getData().idChallenge;
 var myChallenge = Spark.getChallenge(idChallenge);
 
 myChallenge.setScriptData("idJeu", idJeu);
 myChallenge.setScriptData("matterJeu", matterJeu);
 myChallenge.setScriptData("challengerSavieID", challengerSavieID);
+myChallenge.setScriptData("challengeSeed", challengeSeed);
 
 // SEND MESSAGE TO ALL PLAYERS
 var me = Spark.getPlayer();
@@ -51,6 +53,7 @@ newChallenge["idJeu"] = myChallenge.getScriptData("idJeu");
 newChallenge["matterJeu"] = myChallenge.getScriptData("matterJeu");
 newChallenge["maxPlayers"] = myChallenge.getScriptData("maxPlayers");
 newChallenge["challengerSavieID"] = myChallenge.getScriptData("challengerSavieID");
+newChallenge["challengeSeed"] = myChallenge.getScriptData("challengeSeed");
 
 documentToSend = {"theChallenge" : newChallenge};
 

@@ -6,8 +6,4 @@
 //
 // ====================================================================================================
 var idChallenge = Spark.getData().idChallenge;
-var multiplayerSeed = Spark.getData().multiplayerSeed;
-var challenge = Spark.getChallenge(idChallenge);
-
-challenge.setScriptData("multiplayerSeed", multiplayerSeed);
-challenge.startChallenge();
+Spark.getChallenge(idChallenge).startChallenge();
