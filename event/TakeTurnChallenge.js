@@ -7,8 +7,8 @@
 // ====================================================================================================
 
 var challengeId = Spark.getData().challengeId;
-var playerId = Spark.getData().playerId;
 var cellIndex = Spark.getData().cellIndex;
+var playerId = Spark.getPlayer().getPlayerId();
 
 Spark.getChallenge(challengeId).takeTurn(playerId);
 //Spark.setScriptData("cellIndex", cellIndex);
