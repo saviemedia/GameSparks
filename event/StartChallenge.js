@@ -5,9 +5,8 @@
 // For details of the GameSparks Cloud Code API see https://portal.gamesparks.net/docs.htm			
 //
 // ====================================================================================================
+
 var idChallenge = Spark.getData().idChallenge;
-var challenge = Spark.getChallenge(idChallenge).startChallenge();
-var playerIds = challenge.getChallengedPlayerIds();
+var challenge = Spark.getChallenge(idChallenge);
 
-
-Spark.setScriptData("playerIds", playerIds);
+challenge.startChallenge();
