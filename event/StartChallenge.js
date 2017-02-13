@@ -6,4 +6,8 @@
 //
 // ====================================================================================================
 var idChallenge = Spark.getData().idChallenge;
-Spark.getChallenge(idChallenge).startChallenge();
+var challenge = Spark.getChallenge(idChallenge).startChallenge();
+var playerIds = challenge.getChallengedPlayerIds();
+
+
+Spark.setScriptData("playerIds", playerIds);
