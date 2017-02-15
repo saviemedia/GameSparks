@@ -8,6 +8,8 @@
 
 var challengeId = Spark.getData().challengeId;
 var cellIndex = Spark.getData().cellIndex;
+var symbol = Spark.getData().symbol;
+var isAnswerGood = Spark.getData().isAnswerGood;
 var userId = Spark.getData().userId;
 
 var challenge = Spark.getChallenge(challengeId).consumeTurn(userId);
@@ -24,7 +26,7 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 }
 
 var nsg = Spark.message("CHALLENGE_TURN_TAKEN");
-documentToSend = {"cellIndex" : cellIndex};
+documentToSend = {"cellIndex" : cellIndex, "symbol" : symbol, "isAnswerGood" : isAnswerGood};
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
 nsg.send();
