@@ -9,7 +9,7 @@
 var challengeId = Spark.getData().challengeId;
 var cellIndex = Spark.getData().cellIndex;
 var symbol = Spark.getData().symbol;
-var isAnswerGood = Spark.getData().noQuestion;
+var noQuestion = Spark.getData().noQuestion;
 var isAnswerGood = Spark.getData().isAnswerGood;
 var userId = Spark.getData().userId;
 
