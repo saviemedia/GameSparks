@@ -12,7 +12,8 @@ var symbol = Spark.getData().symbol;
 var isAnswerGood = Spark.getData().isAnswerGood;
 var userId = Spark.getData().userId;
 
-var challenge = Spark.getChallenge(challengeId).consumeTurn(userId);
+var challenge = Spark.getChallenge(challengeId);
+challenge.consumeTurn(userId);
 
 var acceptedPlayerIds = challenge.getAcceptedPlayerIds();
 var arr_playerNotified = new Array();
