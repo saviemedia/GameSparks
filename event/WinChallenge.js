@@ -6,6 +6,6 @@
 //
 // ====================================================================================================
 var idChallenge = Spark.getData().idChallenge;
-var userId = Spark.getData().userId;
+var idPlayer = Spark.getData().idPlayer;
 
-Spark.getChallenge(idChallenge).winChallenge(userId);
+Spark.getChallenge(idChallenge).winChallenge(idPlayer);
