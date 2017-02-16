@@ -8,4 +8,6 @@
 var idChallenge = Spark.getData().idChallenge;
 var idPlayer = Spark.getData().idPlayer;
 
-Spark.getChallenge(idChallenge).winChallenge(idPlayer);
+var player = Spark.loadPlayer(idPlayer);
+
+Spark.getChallenge(idChallenge).winChallenge(player);
