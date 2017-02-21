@@ -1,6 +1,6 @@
 // ====================================================================================================
 //
-// Cloud Code for ChallengeRestartDecision, write your code here to customise the GameSparks platform.
+// Cloud Code for ChallengeEndDecision, write your code here to customise the GameSparks platform.
 //
 // For details of the GameSparks Cloud Code API see https://portal.gamesparks.net/docs.htm			
 //
@@ -22,7 +22,7 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 	}
 }
 
-var nsg = Spark.message("CHALLENGE_RESTART_DECISION");
+var nsg = Spark.message("CHALLENGE_END_DECISION_TAKEN");
 documentToSend = {"decisionState" : decisionState};
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
