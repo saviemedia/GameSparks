@@ -22,7 +22,5 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 }
 
 var nsg = Spark.message("CHALLENGE_SURRENDERED");
-documentToSend = {};
-nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
 nsg.send();
