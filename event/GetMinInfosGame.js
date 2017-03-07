@@ -25,6 +25,7 @@ if(myConnectedPlayers.hasNext())
 Spark.setScriptData("runState", myChallenge.getRunState());
 Spark.setScriptData("idJeu", myChallenge.getScriptData("idJeu"));
 Spark.setScriptData("matterJeu", myChallenge.getScriptData("matterJeu"));
+Spark.setScriptData("languageJeu", myChallenge.getScriptData("languageJeu"));
 Spark.setScriptData("maxPlayers", myChallenge.getScriptData("maxPlayers"));
 Spark.setScriptData("challengeSeed", myChallenge.getScriptData("challengeSeed"));
 Spark.setScriptData("challenger", myChallenger);
