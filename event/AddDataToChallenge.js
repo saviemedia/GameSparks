@@ -9,6 +9,7 @@
 // Add some infos for the challenge, the game infos
 var idJeu = Spark.getData().idJeu;
 var matterJeu = Spark.getData().matterJeu;
+var languageJeu = Spark.getData().languageJeu;
 var challengerSavieID = Spark.getData().challengerSavieID;
 var challengeSeed = Spark.getData().challengeSeed;
 var idChallenge = Spark.getData().idChallenge;
@@ -16,6 +17,7 @@ var myChallenge = Spark.getChallenge(idChallenge);
 
 myChallenge.setScriptData("idJeu", idJeu);
 myChallenge.setScriptData("matterJeu", matterJeu);
+myChallenge.setScriptData("languageJeu", languageJeu);
 myChallenge.setScriptData("challengerSavieID", challengerSavieID);
 myChallenge.setScriptData("challengeSeed", challengeSeed);
 
@@ -51,6 +53,7 @@ newChallenge["challengerID"] = myChallenge.getChallengerId();
 newChallenge["challengerName"] = Spark.getPlayer().getDisplayName()
 newChallenge["idJeu"] = myChallenge.getScriptData("idJeu");
 newChallenge["matterJeu"] = myChallenge.getScriptData("matterJeu");
+newChallenge["languageJeu"] = myChallenge.getScriptData("languageJeu");
 newChallenge["maxPlayers"] = myChallenge.getScriptData("maxPlayers");
 newChallenge["challengerSavieID"] = myChallenge.getScriptData("challengerSavieID");
 newChallenge["challengeSeed"] = myChallenge.getScriptData("challengeSeed");
