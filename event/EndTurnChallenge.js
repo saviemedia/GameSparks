@@ -1,17 +1,12 @@
 // ====================================================================================================
 //
-// Cloud Code for ConsumeTurnChallenge, write your code here to customise the GameSparks platform.
+// Cloud Code for EndTurnChallenge, write your code here to customise the GameSparks platform.
 //
 // For details of the GameSparks Cloud Code API see https://portal.gamesparks.net/docs.htm			
 //
 // ====================================================================================================
 
 var challengeId = Spark.getData().challengeId;
-var cellIndex = Spark.getData().cellIndex;
-var symbol = Spark.getData().symbol;
-var noQuestion = Spark.getData().noQuestion;
-var difficultyQuestion = Spark.getData().difficultyQuestion;
-var isAnswerGood = Spark.getData().isAnswerGood;
 var userId = Spark.getData().userId;
 
 var challenge = Spark.getChallenge(challengeId);
@@ -28,7 +23,7 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 	}
 }
 
-var nsg = Spark.message("CHALLENGE_TURN_TAKEN");
+var nsg = Spark.message("CHALLENGE_TURN_ENDED");
 documentToSend = {"cellIndex" : cellIndex, "symbol" : symbol, "noQuestion" : noQuestion, "difficultyQuestion" : difficultyQuestion, "isAnswerGood" : isAnswerGood};
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);

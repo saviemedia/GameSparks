@@ -1,6 +1,6 @@
 // ====================================================================================================
 //
-// Cloud Code for ChooseCellChallenge, write your code here to customise the GameSparks platform.
+// Cloud Code for DisplayQuestionChallenge, write your code here to customise the GameSparks platform.
 //
 // For details of the GameSparks Cloud Code API see https://portal.gamesparks.net/docs.htm			
 //
@@ -26,7 +26,7 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 	}
 }
 
-var nsg = Spark.message("CHALLENGE_CELL_CHOSEN");
+var nsg = Spark.message("CHALLENGE_QUESTION_DISPLAYED");
 documentToSend = {"cellIndex" : cellIndex, "symbol" : symbol, "noQuestion" : noQuestion, "difficultyQuestion" : difficultyQuestion};
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
