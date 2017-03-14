@@ -8,7 +8,7 @@
 
 var challengeId = Spark.getData().challengeId;
 var userId = Spark.getData().userId;
-var noReponse = Spark.getData().noAnswer;
+var noAnswer = Spark.getData().noAnswer;
 
 var challenge = Spark.getChallenge(challengeId);
 var acceptedPlayerIds = challenge.getAcceptedPlayerIds();
