@@ -8,9 +8,7 @@
 
 var challengeId = Spark.getData().challengeId;
 var userId = Spark.getData().userId;
-var noQuestion = Spark.getData().noQuestion;
 var noReponse = Spark.getData().noReponse;
-var isAnswerGood = Spark.getData().isAnswerGood;
 
 var challenge = Spark.getChallenge(challengeId);
 var acceptedPlayerIds = challenge.getAcceptedPlayerIds();
@@ -25,7 +23,7 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 }
 
 var nsg = Spark.message("CHALLENGE_QUESTION_ANSWERED");
-documentToSend = {"noQuestion" : noQuestion, "noReponse": noReponse, "isAnswerGood" : isAnswerGood};
+documentToSend = {"noReponse": noReponse};
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
 nsg.send();
