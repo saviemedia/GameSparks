@@ -24,7 +24,7 @@ for (var i = 0; i < acceptedPlayerIds.length; i++)
 }
 
 var nsg = Spark.message("CHALLENGE_TURN_ENDED");
-documentToSend = {"cellIndex" : cellIndex, "symbol" : symbol, "noQuestion" : noQuestion, "difficultyQuestion" : difficultyQuestion, "isAnswerGood" : isAnswerGood};
+documentToSend = {};
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
 nsg.send();
