@@ -23,7 +23,8 @@ segmentName = me.getSegmentValue("GameTemplateSegment");
 
 var urlAvatar = Spark.getPlayer().getPrivateData("urlAvatar");
 var myAvatar = Spark.getPlayer().getPrivateData("avatar");
-var myDocument = {"idPlayer" :  myId, "displayName" : displayNamePlayer, "avatar" : myAvatar};
+var savieID = Spark.getPlayer().getScriptData["savieID"];
+var myDocument = {"idPlayer" :  myId, "displayName" : displayNamePlayer, "avatar" : myAvatar, "savieID" : savieID};
 var playerConnect = Spark.runtimeCollection("PlayerConnected").find({"idPlayer" :myId });
 
 
