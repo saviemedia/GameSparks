@@ -14,11 +14,12 @@ var arr_connectedPlayers = new Array();
 while(myConnectedPlayers.hasNext())
 {
     myConnectedPlayers.next();
-    var myCurrPlayer = myConnectedPlayers.curr();
+    var myCurrPlayer = myConnectedPlayers.curr();	
     var idPlayer = myCurrPlayer["idPlayer"];
     var myPlayer = Spark.loadPlayer(idPlayer);
     var myPlayerSegment = myPlayer.getSegmentValue("GameTemplateSegment");
     var isBusy = myPlayer.getScriptData("busy");
+	myCurrPlayer["savieID"] = myPlayer.getScriptData["savieID"];
     
     if(!isBusy)
     {

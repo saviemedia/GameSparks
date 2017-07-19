@@ -20,7 +20,7 @@ arr_playerNotified.push(myChallengerId);
 
 Spark.setScriptData("arr_playerNotified", arr_playerNotified);
 
-var documentToSend = {"idChallenge": myIdChallenge, "idPlayer" : myIdPlayer};
+var documentToSend = {"idChallenge" : myIdChallenge, "idPlayer" : myIdPlayer};
 var nsg = Spark.message("CHALLENGE_PARTICIPANT_LEFT");
 nsg.setMessageData(documentToSend);
 nsg.setPlayerIds(arr_playerNotified);
