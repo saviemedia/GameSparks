@@ -20,10 +20,12 @@ var shortCodeNameAvatar = Spark.getPlayer().getPrivateData("avatar");
 var me = Spark.loadPlayer(myId);
 segmentName = me.getSegmentValue("GameTemplateSegment");
 
+
 var urlAvatar = Spark.getPlayer().getPrivateData("urlAvatar");
 var myAvatar = Spark.getPlayer().getPrivateData("avatar");
 var myDocument = {"idPlayer" :  myId, "displayName" : displayNamePlayer, "avatar" : myAvatar};
 var playerConnect = Spark.runtimeCollection("PlayerConnected").find({"idPlayer" :myId });
+
 
 // Send message to other that you connected to the game
 var myConnectedPlayers = Spark.runtimeCollection("PlayerConnected").find();
