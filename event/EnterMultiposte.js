@@ -15,15 +15,14 @@ var myConnectedPlayersColl = Spark.runtimeCollection("PlayerConnected");
 var myId = Spark.getPlayer().getPlayerId();
 var displayNamePlayer = Spark.getPlayer().getDisplayName();
 var shortCodeNameAvatar = Spark.getPlayer().getPrivateData("avatar");
+var savieID = Spark.getPlayer().getScriptData["savieID"];
 
 // Add segment
 var me = Spark.loadPlayer(myId);
 segmentName = me.getSegmentValue("GameTemplateSegment");
 
-
 var urlAvatar = Spark.getPlayer().getPrivateData("urlAvatar");
 var myAvatar = Spark.getPlayer().getPrivateData("avatar");
-var savieID = Spark.getPlayer().getScriptData["savieID"];
 var myDocument = {"idPlayer" :  myId, "displayName" : displayNamePlayer, "avatar" : myAvatar, "savieID" : savieID};
 var playerConnect = Spark.runtimeCollection("PlayerConnected").find({"idPlayer" :myId });
 
