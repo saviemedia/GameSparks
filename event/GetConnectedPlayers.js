@@ -18,9 +18,7 @@ while(myConnectedPlayers.hasNext())
     var idPlayer = myCurrPlayer["idPlayer"];
     var myPlayer = Spark.loadPlayer(idPlayer);
     var myPlayerSegment = myPlayer.getSegmentValue("GameTemplateSegment");
-    var isBusy = myPlayer.getScriptData("busy");
-	var savieID = myPlayer.getScriptData("savieID");
-	myCurrPlayer["savieID"] = savieID;
+    var isBusy = myPlayer.getScriptData("busy");z
     
     if(!isBusy)
     {
