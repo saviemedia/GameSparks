@@ -16,14 +16,13 @@ var myId = Spark.getPlayer().getPlayerId();
 var displayNamePlayer = Spark.getPlayer().getDisplayName();
 var shortCodeNameAvatar = Spark.getPlayer().getPrivateData("avatar");
 
-
 // Add segment
 var me = Spark.loadPlayer(myId);
 segmentName = me.getSegmentValue("GameTemplateSegment");
 
 var urlAvatar = Spark.getPlayer().getPrivateData("urlAvatar");
 var myAvatar = Spark.getPlayer().getPrivateData("avatar");
-var myDocument = {"me" :  me};
+var myDocument = {"idPlayer" :  myId, "displayName" : displayNamePlayer, "avatar" : myAvatar};
 var playerConnect = Spark.runtimeCollection("PlayerConnected").find({"idPlayer" :myId });
 
 // Send message to other that you connected to the game
@@ -36,8 +35,6 @@ while(myConnectedPlayers.hasNext())
     var myCurrPlayer = myConnectedPlayers.curr();
     var idPlayer = myCurrPlayer["idPlayer"];
     var myPlayer = Spark.loadPlayer(idPlayer);
-	var savieID = myPlayer.getScriptData["savieID"];
-	myDocument["savieID"] = savieID;
     var segmentPlayer = myPlayer.getSegmentValue("GameTemplateSegment");
     
     if( myPlayer.getSegmentValue("GameTemplateSegment") != null)

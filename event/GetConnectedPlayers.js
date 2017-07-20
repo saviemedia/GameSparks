@@ -26,7 +26,13 @@ while(myConnectedPlayers.hasNext())
         {
             if(myPlayerSegment == selfSegmentName && idPlayer != selfPlayerId)
             {
-               arr_connectedPlayers.push(myCurrPlayer);
+				var connectedPlayer = {};
+				connectedPlayer["idPlayer"] = myCurrPlayer["idPlayer"];
+				connectedPlayer["displayName"] = myCurrPlayer["displayName"];
+				connectedPlayer["avatar"] = myCurrPlayer["avatar"];
+				connectedPlayer["savieID"] = myPlayer.getScriptData("savieID");
+				
+                arr_connectedPlayers.push(connectedPlayer);
             }
         }
     }
