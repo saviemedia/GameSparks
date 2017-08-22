@@ -27,7 +27,7 @@ while(myConnectedPlayers.hasNext())
     var myCurrConnectedPlayer = myConnectedPlayers.curr();
     var myCurrPlayerId = myCurrConnectedPlayer["idPlayer"];
     var myCurrPlayer = Spark.loadPlayer(myCurrPlayerId);
-    var segmentPlayer = myPlayer.getSegmentValue("GameTemplateSegment");
+    var segmentPlayer = myCurrPlayer.getSegmentValue("GameTemplateSegment");
     
     if(myCurrPlayer.getSegmentValue("GameTemplateSegment") != null)
     {
