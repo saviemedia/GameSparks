@@ -12,10 +12,9 @@ var opponentPlayer = Spark.loadPlayer(idPlayer);
 var opponentName = opponentPlayer.getDisplayName();
 var opponentId = opponentPlayer.getPlayerId();
 
-
 var idChallenge = Spark.getData().idChallenge;
 var challengerName = Spark.getPlayer().getDisplayName();
-var challergerID = Spark.getPlayer().getPlayerId();
+var challengerID = Spark.getPlayer().getPlayerId();
 
 // Send message to other that you invited someone to your challenge
 var myConnectedPlayers = Spark.runtimeCollection("PlayerConnected").find();
@@ -25,23 +24,21 @@ var segmentName = Spark.getPlayer().getSegmentValue("GameTemplateSegment");
 while(myConnectedPlayers.hasNext())
 {
     myConnectedPlayers.next();
-    var myCurrPlayer = myConnectedPlayers.curr();
-    var idPlayer = myCurrPlayer["idPlayer"];
-    var myPlayer = Spark.loadPlayer(idPlayer);
+    var myCurrConnectedPlayer = myConnectedPlayers.curr();
+    var myCurrPlayerId = myCurrConnectedPlayer["idPlayer"];
+    var myCurrPlayer = Spark.loadPlayer(myCurrPlayerId);
     var segmentPlayer = myPlayer.getSegmentValue("GameTemplateSegment");
     
-    if( myPlayer.getSegmentValue("GameTemplateSegment") != null)
+    if(myCurrPlayer.getSegmentValue("GameTemplateSegment") != null)
     {
-         if(segmentName == segmentPlayer)
+         if(segmentName == segmentPlayer && myCurrPlayerId == idPlayer)
         {
-           arr_playerNotified.push(idPlayer);
+			arr_playerNotified.push(idPlayer);
         }
     }
 }
 
-
-
-var infosSend = {"idChallenge" : idChallenge, "challengerID" : challergerID, "challengerName" : challengerName, "opponentId" : opponentId ,  "opponentName" : opponentName};
+var infosSend = {"idChallenge" : idChallenge, "challengerID" : challengerID, "challengerName" : challengerName, "opponentId" : opponentId ,  "opponentName" : opponentName};
 
 var msg = Spark.message("INVITE_PLAYER_CHALLENGE");
 msg.setMessageData(infosSend);
