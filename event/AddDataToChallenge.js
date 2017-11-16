@@ -57,6 +57,7 @@ newChallenge["languageJeu"] = myChallenge.getScriptData("languageJeu");
 newChallenge["maxPlayers"] = myChallenge.getScriptData("maxPlayers");
 newChallenge["challengerSavieID"] = myChallenge.getScriptData("challengerSavieID");
 newChallenge["challengeSeed"] = myChallenge.getScriptData("challengeSeed");
+newChallenge["challengeSegment"] = segmentName;
 
 documentToSend = {"theChallenge" : newChallenge};
 
