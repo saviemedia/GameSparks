@@ -15,15 +15,16 @@ var challengeSeed = Spark.getData().challengeSeed;
 var idChallenge = Spark.getData().idChallenge;
 var myChallenge = Spark.getChallenge(idChallenge);
 
+// SEND MESSAGE TO ALL PLAYERS
+var me = Spark.getPlayer();
+var segmentName = me.getSegmentValue("GameTemplateSegment");
+
 myChallenge.setScriptData("idJeu", idJeu);
 myChallenge.setScriptData("matterJeu", matterJeu);
 myChallenge.setScriptData("languageJeu", languageJeu);
 myChallenge.setScriptData("challengerSavieID", challengerSavieID);
 myChallenge.setScriptData("challengeSeed", challengeSeed);
-
-// SEND MESSAGE TO ALL PLAYERS
-var me = Spark.getPlayer();
-var segmentName = me.getSegmentValue("GameTemplateSegment");
+myChallenge.setScriptData("challengeSegment", segmentName);
 
 // Send message to other that you connected to the game
 var myConnectedPlayers = Spark.runtimeCollection("PlayerConnected").find();
@@ -57,7 +58,7 @@ newChallenge["languageJeu"] = myChallenge.getScriptData("languageJeu");
 newChallenge["maxPlayers"] = myChallenge.getScriptData("maxPlayers");
 newChallenge["challengerSavieID"] = myChallenge.getScriptData("challengerSavieID");
 newChallenge["challengeSeed"] = myChallenge.getScriptData("challengeSeed");
-newChallenge["challengeSegment"] = segmentName;
+newChallenge["challengeSegment"] = myChallenge.getScriptData("challengeSegment");
 
 documentToSend = {"theChallenge" : newChallenge};
 
