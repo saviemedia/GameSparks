@@ -16,7 +16,8 @@ var idChallenge = Spark.getData().idChallenge;
 var challengerName = Spark.getPlayer().getDisplayName();
 var challengerID = Spark.getPlayer().getPlayerId();
 var challengerSavieID = Spark.getPlayer().getScriptData("savieID");
-var challengeLanguage = Spark.getPlayer().getScriptData("languageJeu");
+var myChallenge = Spark.getChallenge(idChallenge);
+var challengeLanguage = myChallenge.getScriptData("languageJeu");
 
 // Send message to other that you invited someone to your challenge
 var myConnectedPlayers = Spark.runtimeCollection("PlayerConnected").find();
