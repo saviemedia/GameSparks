@@ -16,6 +16,7 @@ var idChallenge = Spark.getData().idChallenge;
 var challengerName = Spark.getPlayer().getDisplayName();
 var challengerID = Spark.getPlayer().getPlayerId();
 var challengerSavieID = Spark.getPlayer().getScriptData("savieID");
+var challengeLanguage = Spark.getPlayer().getScriptData("languageJeu");
 
 // Send message to other that you invited someone to your challenge
 var myConnectedPlayers = Spark.runtimeCollection("PlayerConnected").find();
@@ -39,7 +40,7 @@ while(myConnectedPlayers.hasNext())
     }
 }
 
-var infosSend = {"idChallenge" : idChallenge, "challengerID" : challengerID, "challengerName" : challengerName, "challengerSavieID" : challengerSavieID, "opponentId" : opponentId ,  "opponentName" : opponentName};
+var infosSend = {"idChallenge" : idChallenge, "challengerID" : challengerID, "challengeLanguage" : challengeLanguage, "challengerName" : challengerName, "challengerSavieID" : challengerSavieID, "opponentId" : opponentId ,  "opponentName" : opponentName};
 
 var msg = Spark.message("INVITE_PLAYER_CHALLENGE");
 msg.setMessageData(infosSend);
