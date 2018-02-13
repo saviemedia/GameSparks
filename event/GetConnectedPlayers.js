@@ -19,8 +19,9 @@ while(myConnectedPlayers.hasNext())
     var myPlayer = Spark.loadPlayer(idPlayer);
     var myPlayerSegment = myPlayer.getSegmentValue("GameTemplateSegment");
     var isBusy = myPlayer.getScriptData("busy");
+	var isOnline = myPlayer.isOnline();
     
-    if(!isBusy)
+    if(isOnline && !isBusy)
     {
         if(myPlayer.getSegmentValue("GameTemplateSegment") != null)
         {
